@@ -1,2 +1,2 @@
-import UploadPage from './pages/UploadPage';
-export default function App() { return <UploadPage /> }
+import TrackPage from './pages/TrackPage';
+export default function App() { return <TrackPage /> }
