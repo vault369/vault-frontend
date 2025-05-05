@@ -1,2 +1,2 @@
-import TrackList from './pages/TrackList';
-export default function App() { return <TrackList /> }
+import UploadPage from './pages/UploadPage';
+export default function App() { return <UploadPage /> }
