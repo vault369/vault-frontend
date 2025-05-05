@@ -1,9 +1,3 @@
-import React from 'react';
+import React from 'react'; import { Link } from 'react-router-dom';
 
-export default function HomePage() {
-  return (
-    <div className="min-h-screen bg-[#0d0d0d] text-slate-100 p-10 text-center text-4xl">
-      HomePage Page
-    </div>
-  );
-}
+export default function HomePage() { return <div>Home Page <Link to='/track'>Go to Track</Link></div>; }
