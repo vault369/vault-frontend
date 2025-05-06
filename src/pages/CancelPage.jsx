@@ -2,9 +2,9 @@ import React from "react";
 
 const CancelPage = () => {
   return (
-    <div style={{ padding: "2rem", textAlign: "center" }}>
-      <h1>❌ Mint Cancelled</h1>
-      <p>No worries! You can try minting again anytime.</p>
+    <div style={{ padding: "2rem", color: "#f00" }}>
+      <h2>❌ Mint Cancelled</h2>
+      <p>No worries — come back anytime.</p>
     </div>
   );
 };
