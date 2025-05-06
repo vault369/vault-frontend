@@ -2,9 +2,9 @@ import React from "react";
 
 const SuccessPage = () => {
   return (
-    <div style={{ padding: "2rem", textAlign: "center" }}>
-      <h1>✅ Mint Successful</h1>
-      <p>Thank you! Your track has been minted.</p>
+    <div style={{ padding: "2rem", color: "#0f0" }}>
+      <h2>✅ Success!</h2>
+      <p>Your track has been minted. Thank you!</p>
     </div>
   );
 };
