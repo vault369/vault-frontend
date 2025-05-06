@@ -10,11 +10,10 @@ import CancelPage from "./pages/CancelPage";
 function App() {
   return (
     <Router>
-      <div style={{ padding: "1rem", borderBottom: "1px solid #ccc" }}>
+      <div style={{ padding: "1rem", borderBottom: "1px solid #333" }}>
         <Link to="/" style={{ marginRight: "1rem" }}>Home</Link>
         <Link to="/mint">Mint</Link>
       </div>
-
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/mint" element={<MintPage />} />
