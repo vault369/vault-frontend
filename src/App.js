@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-
 import HomePage from "./pages/HomePage";
 import MintPage from "./pages/MintPage";
 import TrackPage from "./pages/TrackPage";
