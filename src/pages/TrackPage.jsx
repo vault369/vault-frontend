@@ -30,7 +30,7 @@ const TrackPage = () => {
     }
   };
 
-  if (!track) return <p>Loading track...</p>;
+  if (!track) return <p style={{ padding: "2rem" }}>Loading track...</p>;
 
   return (
     <div style={{ padding: "2rem", textAlign: "center" }}>
@@ -38,11 +38,9 @@ const TrackPage = () => {
       <p>{track.artist}</p>
       <img src={track.cover} alt={track.title} style={{ width: "300px", borderRadius: "12px" }} />
       <div style={{ marginTop: "2rem", background: "#000", height: "100px", borderRadius: "10px" }}>
-        <p style={{ color: "#fff", paddingTop: "35px" }}>⚡ waveform visual here</p>
+        <p style={{ color: "#0ff", paddingTop: "35px" }}>⚡ waveform visual here</p>
       </div>
-      <button onClick={handleMint} style={{ marginTop: "2rem", padding: "1rem 2rem", fontSize: "1.2rem" }}>
-        Mint Track
-      </button>
+      <button onClick={handleMint} style={{ marginTop: "2rem" }}>Mint Track</button>
     </div>
   );
 };
