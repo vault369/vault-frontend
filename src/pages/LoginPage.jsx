@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-
 const LoginPage = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("test@example.com");
+  const [password, setPassword] = useState("password");
 
   const handleLogin = async () => {
     const response = await fetch("https://vaultmvp.onrender.com/api/login", {
@@ -24,5 +23,4 @@ const LoginPage = () => {
     </div>
   );
 };
-
 export default LoginPage;

@@ -10,16 +10,12 @@ const TrackPage = () => {
 
   useEffect(() => {
     fetch("https://vaultmvp.onrender.com/api/tracks")
-      .then((res) => res.json())
-      .then((data) => {
-        const found = data.find((t) => t.id === id);
-        setTrack(found);
-      })
-      .catch((err) => console.error("Track fetch error:", err));
+      .then(res => res.json())
+      .then(data => setTrack(data.find(t => t.id === id)));
   }, [id]);
 
   useEffect(() => {
-    if (track && waveformRef.current && track.audio) {
+    if (track && track.audio && waveformRef.current) {
       wavesurfer.current = WaveSurfer.create({
         container: waveformRef.current,
         waveColor: "#0ff",
@@ -33,22 +29,15 @@ const TrackPage = () => {
   }, [track]);
 
   const handleMint = async () => {
-    try {
-      const res = await fetch("https://vaultmvp.onrender.com/api/create-checkout-session", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-      });
-      const data = await res.json();
-      if (data.id) {
-        window.location.href = `https://checkout.stripe.com/pay/${data.id}`;
-      }
-    } catch (err) {
-      alert("Minting failed.");
-    }
+    const res = await fetch("https://vaultmvp.onrender.com/api/create-checkout-session", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+    });
+    const data = await res.json();
+    if (data.id) window.location.href = `https://checkout.stripe.com/pay/${data.id}`;
   };
 
   if (!track) return <p style={{ padding: "2rem" }}>Loading track...</p>;
-
   return (
     <div style={{ padding: "2rem", textAlign: "center" }}>
       <h1>{track.title}</h1>

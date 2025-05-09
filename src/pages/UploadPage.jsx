@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 const UploadPage = () => {
   const [title, setTitle] = useState("");
   const [artist, setArtist] = useState("");
@@ -12,12 +11,10 @@ const UploadPage = () => {
     formData.append("artist", artist);
     formData.append("cover", cover);
     formData.append("audio", audio);
-
     const response = await fetch("https://vaultmvp.onrender.com/api/upload", {
       method: "POST",
       body: formData,
     });
-
     const data = await response.json();
     alert(data.message || "Upload complete!");
   };
@@ -33,5 +30,4 @@ const UploadPage = () => {
     </div>
   );
 };
-
 export default UploadPage;

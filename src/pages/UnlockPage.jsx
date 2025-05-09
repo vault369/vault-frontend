@@ -11,8 +11,7 @@ const UnlockPage = () => {
       .then((data) => {
         const found = data.find((t) => t.id === id);
         setTrack(found);
-      })
-      .catch((err) => console.error("Unlock fetch error:", err));
+      });
   }, [id]);
 
   if (!track) return <p style={{ padding: "2rem" }}>Loading...</p>;
