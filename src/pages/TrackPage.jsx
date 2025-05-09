@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
+import WaveSurfer from "wavesurfer.js";
 
 const TrackPage = () => {
   const { id } = useParams();
   const [track, setTrack] = useState(null);
+  const waveformRef = useRef(null);
+  const wavesurfer = useRef(null);
 
   useEffect(() => {
     fetch("https://vaultmvp.onrender.com/api/tracks")
@@ -14,6 +17,20 @@ const TrackPage = () => {
       })
       .catch((err) => console.error("Track fetch error:", err));
   }, [id]);
+
+  useEffect(() => {
+    if (track && waveformRef.current && track.audio) {
+      wavesurfer.current = WaveSurfer.create({
+        container: waveformRef.current,
+        waveColor: "#0ff",
+        progressColor: "#0cc",
+        height: 100,
+        barWidth: 2,
+      });
+      wavesurfer.current.load(track.audio);
+    }
+    return () => wavesurfer.current && wavesurfer.current.destroy();
+  }, [track]);
 
   const handleMint = async () => {
     try {
@@ -37,9 +54,7 @@ const TrackPage = () => {
       <h1>{track.title}</h1>
       <p>{track.artist}</p>
       <img src={track.cover} alt={track.title} style={{ width: "300px", borderRadius: "12px" }} />
-      <div style={{ marginTop: "2rem", background: "#000", height: "100px", borderRadius: "10px" }}>
-        <p style={{ color: "#0ff", paddingTop: "35px" }}>⚡ waveform visual here</p>
-      </div>
+      <div ref={waveformRef} style={{ marginTop: "2rem" }} />
       <button onClick={handleMint} style={{ marginTop: "2rem" }}>Mint Track</button>
     </div>
   );
