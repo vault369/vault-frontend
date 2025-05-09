@@ -7,6 +7,7 @@ import SuccessPage from "./pages/SuccessPage";
 import CancelPage from "./pages/CancelPage";
 import LoginPage from "./pages/LoginPage";
 import UploadPage from "./pages/UploadPage";
+import UnlockPage from "./pages/UnlockPage";
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
         <Link to="/" style={{ marginRight: "1rem" }}>Home</Link>
         <Link to="/mint" style={{ marginRight: "1rem" }}>Mint</Link>
         <Link to="/login" style={{ marginRight: "1rem" }}>Login</Link>
-        <Link to="/upload">Upload</Link>
+        <Link to="/upload" style={{ marginRight: "1rem" }}>Upload</Link>
       </div>
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -25,6 +26,7 @@ function App() {
         <Route path="/cancel" element={<CancelPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/upload" element={<UploadPage />} />
+        <Route path="/unlock/:id" element={<UnlockPage />} />
       </Routes>
     </Router>
   );
