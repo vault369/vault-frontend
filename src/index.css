@@ -10,6 +10,7 @@ a {
 }
 nav {
   padding: 1rem;
+  background: #111;
   border-bottom: 1px solid #333;
 }
 button {
@@ -20,4 +21,5 @@ button {
   border-radius: 5px;
   font-weight: bold;
   cursor: pointer;
+  margin: 0.5rem 0;
 }
