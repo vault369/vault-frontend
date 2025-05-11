@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 const UploadPage = () => {
-  const [message, setMessage] = useState("Waiting for file upload...");
   return (
     <div style={{ padding: "2rem" }}>
-      <h2>Upload Coming Soon</h2>
-      <p>This feature will allow you to upload your album <strong>AWAKENING</strong> as a Digital Pressing.</p>
-      <p style={{ color: "#0ff" }}>{message}</p>
+      <h2>Upload Your Track</h2>
+      <p>This will be where you upload music from <strong>AWAKENING</strong>.</p>
+      <input type="file" />
+      <button>Submit</button>
     </div>
   );
 };

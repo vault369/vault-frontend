@@ -5,8 +5,9 @@ const UnlockPage = () => {
   const { id } = useParams();
   return (
     <div style={{ padding: "2rem" }}>
-      <h2>Unlock Content</h2>
-      <p>This will let buyers of <strong>AWAKENING</strong> track #{id} download exclusive content.</p>
+      <h2>Unlock Track #{id}</h2>
+      <p>If you purchased this track, your exclusive download appears here.</p>
+      <button>Download ZIP</button>
     </div>
   );
 };

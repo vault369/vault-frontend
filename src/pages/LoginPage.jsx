@@ -1,26 +1,18 @@
 import React, { useState } from "react";
-const LoginPage = () => {
-  const [email, setEmail] = useState("test@example.com");
-  const [password, setPassword] = useState("password");
 
-  const handleLogin = async () => {
-    const response = await fetch("https://vaultmvp.onrender.com/api/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      credentials: "include",
-      body: JSON.stringify({ email, password }),
-    });
-    const data = await response.json();
-    alert(data.message || "Logged in");
-  };
+const LoginPage = () => {
+  const [email, setEmail] = useState("");
+  const [pw, setPw] = useState("");
+  const login = () => alert("Login simulated!");
 
   return (
     <div style={{ padding: "2rem" }}>
-      <h2>Login</h2>
-      <input placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} /><br /><br />
-      <input placeholder="Password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} /><br /><br />
-      <button onClick={handleLogin}>Login</button>
+      <h2>Login to VAULT</h2>
+      <input placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} /><br/>
+      <input type="password" placeholder="Password" value={pw} onChange={(e) => setPw(e.target.value)} /><br/>
+      <button onClick={login}>Login</button>
     </div>
   );
 };
+
 export default LoginPage;
